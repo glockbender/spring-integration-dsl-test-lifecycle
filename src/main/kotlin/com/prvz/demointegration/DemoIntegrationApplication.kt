@@ -20,7 +20,6 @@ fun main(args: Array<String>) {
 
     for (i in 0..100) {
         rabbitTemplate.convertAndSend("int-test-ex", "int-test-rk", "TEST MESSAGE $i")
-        Thread.sleep(300)
     }
 
 
