@@ -39,7 +39,7 @@ class IntegrationConfig {
         connectionFactory: ConnectionFactory
     ): AmqpInboundChannelAdapterSMLCSpec =
         Amqp.inboundAdapter(connectionFactory, queue)
-            .recoveryCallback { println("RECOVERY") }
+            .recoveryCallback { logger.info("RECOVERY") }
 
     @Bean
     fun testHandler(): GenericHandler<String> = GenericHandler { payload, headers ->
